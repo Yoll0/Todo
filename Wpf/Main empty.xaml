@@ -7,6 +7,8 @@
         mc:Ignorable="d"
         Title="Main_empty" Height="450" Width="800">
     <Grid>
-        
+        <Image Height="NaN" Margin="0,0,730,364" Source="/Image1.png" Stretch="Fill" Width="NaN"/>
+        <Label Content="Добро пожаловать" Margin="259,84,282,294" Height="NaN" Width="NaN" FontSize="24"/>
+
     </Grid>
 </Window>

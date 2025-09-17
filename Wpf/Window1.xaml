@@ -126,7 +126,7 @@
     <Grid Margin="0,3,0,3">
         <Label Content="Welcome back" Margin="429,10,50,349" FontSize="32"/>
         <Label Content="Имя пользователя" Margin="433,60,112,259" FontSize="18"/>
-        <TextBox TextWrapping="Wrap" Text="Введите имя пользователя" Margin="433,91,158,404" TextChanged="TextBox_TextChanged" FontSize="14"/>
+        <TextBox TextWrapping="Wrap" Text="Введите имя пользователя" Margin="433,91,158,404"  FontSize="14"/>
         <Label Content="Ваша почта" Margin="434,138,111,223" RenderTransformOrigin="0.5,0.5" FontSize="18">
             <Label.RenderTransform>
                 <TransformGroup>
@@ -139,7 +139,7 @@
         </Label>
         <TextBox TextWrapping="Wrap" Text="example@yandex.ru" Margin="433,169,158,326" FontSize="14"/>
         <Label Content="Пароль" Margin="433,220,158,165" FontSize="18"/>
-        <TextBox TextWrapping="Wrap" Text="Введите пароль" Margin="433,254,158,244" TextChanged="TextBox_TextChanged_1" FontSize="14"/>
+        <TextBox TextWrapping="Wrap" Text="Введите пароль" Margin="433,254,158,244"  FontSize="14"/>
         <Label Content="Повторите пароль" Margin="433,300,158,103" FontSize="18"/>
         <TextBox TextWrapping="Wrap" Text="Повторите пароль" Margin="433,329,156,161" RenderTransformOrigin="0.5,0.5" FontSize="14">
             <TextBox.RenderTransform>

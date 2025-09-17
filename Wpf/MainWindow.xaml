@@ -140,7 +140,7 @@
             Content="Регистрация"
             FontFamily="Arial"
             FontSize="25"
-            Background="#6E5CEA"
+            Background="#f96060"
             BorderBrush="#F4F4FC"
             Foreground="#F4F4FC" Margin="414,123,136,53" Grid.Row="2"
             />
@@ -151,7 +151,7 @@
             Content="Войти"
             FontFamily="Arial"
             FontSize="25"
-            Background="#6E5CEA"
+            Background="#f96060"
             BorderBrush="#F4F4FC"
             Foreground="#F4F4FC" Margin="414,33,136,143" Grid.Row="2"
             />
