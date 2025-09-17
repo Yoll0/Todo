@@ -158,7 +158,7 @@
             Content="Зарегистрироваться"
             FontFamily="Arial"
             FontSize="25"
-            Background="#6E5CEA"
+            Background="#f96060"
             BorderBrush="#F4F4FC"
             Foreground="#F4F4FC" Margin="401,391,126,88"
             />
@@ -169,7 +169,7 @@
             Content="Назад"
             FontFamily="Arial"
             FontSize="25"
-            Background="#6E5CEA"
+            Background="#f96060"
             BorderBrush="#F4F4FC"
             Foreground="#F4F4FC" Margin="401,461,126,17"
             />
