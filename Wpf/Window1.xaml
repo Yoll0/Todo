@@ -137,7 +137,7 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <TextBox TextWrapping="Wrap" Text="example@yandex.ru" Margin="433,169,158,326" FontSize="14" TextChanged="TextBox_TextChanged_1"/>
+        <TextBox TextWrapping="Wrap" Text="example@yandex,ru" Margin="433,169,158,326" FontSize="14" TextChanged="TextBox_TextChanged_1"/>
         <Label Content="Пароль" Margin="433,220,158,165" FontSize="18"/>
         <TextBox TextWrapping="Wrap" Text="Введите пароль" Margin="433,254,158,244"  FontSize="14" TextChanged="TextBox_TextChanged_2"/>
         <Label Content="Повторите пароль" Margin="433,300,158,103" FontSize="18"/>
@@ -160,7 +160,7 @@
             FontSize="25"
             Background="#f96060"
             BorderBrush="#F4F4FC"
-            Foreground="#F4F4FC" Margin="401,391,126,88"
+            Foreground="#F4F4FC" Margin="403,391,124,85"
             />
         <Button Style="{DynamicResource ButtonStyle2}"
             Width="300"
