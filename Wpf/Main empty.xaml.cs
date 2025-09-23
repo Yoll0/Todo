@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -25,12 +26,19 @@ namespace Wpf
         }
         private void profileImage_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            profilePopup.IsOpen = true;
+           // profilePopup.IsOpen = true;
+            if (profilePopup.IsOpen)
+            {
+                profilePopup.IsOpen = false;
+            }
+            else
+            {
+                profilePopup.IsOpen = true;
+            }
         }
 
         private void ChangeProfilePhoto_Click(object sender, RoutedEventArgs e)
         {
-            // Добавьте код для изменения фото профиля
             profilePopup.IsOpen = false;
         }
 
