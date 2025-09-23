@@ -70,11 +70,28 @@
             <RowDefinition Height="26*"/>
             <RowDefinition Height="191*"/>
         </Grid.RowDefinitions>
-        <Image Height="NaN" Margin="0,0,730,364" Source="/Image1.png" Stretch="Fill" Width="NaN" Grid.RowSpan="2"/>
         <Label Content="Добро пожаловать" Margin="238,27,302,298" Height="NaN" Width="NaN" FontSize="24" Grid.Row="1"/>
         <Label Content="Создайте свою первую&#xD;&#xA;задачу!" Margin="238,88,261,201" FontSize="22" Grid.Row="1"/>
-                
-        <Button Style="{DynamicResource ButtonStyle1}" Background="#f96060" Content="Создать первую задачу" BorderBrush="#F4F4FC" BorderThickness="2" Foreground="#F4F4FC" Margin="238,216,291,102" FontSize="16" Grid.Row="1"/>
 
+        <TextBlock Text="Выход" />
+
+        <Button Style="{DynamicResource ButtonStyle1}" Background="#f96060" Content="Создать первую задачу" BorderBrush="#F4F4FC" BorderThickness="2" Foreground="#F4F4FC" Margin="238,216,291,102" FontSize="16" Grid.Row="1"/>
+        <Image x:Name="profileImage" Margin="0,0,668,303" Grid.RowSpan="2" Source="/Image4.png" Stretch="Fill" Grid.Column="1" 
+           ToolTipService.ToolTip="{Binding ElementName=profilePopup, Path=Child}"
+           MouseLeftButtonUp="profileImage_MouseLeftButtonUp">
+            <Image.Style>
+                <Style TargetType="Image">
+                    <Setter Property="Cursor" Value="Hand" />
+                </Style>
+            </Image.Style>
+        </Image>
+
+        <Popup x:Name="profilePopup" PlacementTarget="{Binding ElementName=profileImage}" 
+           Placement="Left" IsOpen="False">
+            <StackPanel>
+                <Button Content="Изменить фото профиля" Click="ChangeProfilePhoto_Click" />
+                <Button Content="Выход" Click="Logout_Click" />
+            </StackPanel>
+        </Popup>
     </Grid>
 </Window>

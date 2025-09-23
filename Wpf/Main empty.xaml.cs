@@ -23,5 +23,21 @@ namespace Wpf
         {
             InitializeComponent();
         }
+        private void profileImage_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            profilePopup.IsOpen = true;
+        }
+
+        private void ChangeProfilePhoto_Click(object sender, RoutedEventArgs e)
+        {
+            // Добавьте код для изменения фото профиля
+            profilePopup.IsOpen = false;
+        }
+
+        private void Logout_Click(object sender, RoutedEventArgs e)
+        {
+            // Добавьте код для выхода из приложения
+            profilePopup.IsOpen = false;
+        }
     }
 }
