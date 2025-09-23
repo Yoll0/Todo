@@ -66,11 +66,15 @@
         </Style>
     </Window.Resources>
     <Grid>
-        <Image Height="NaN" Margin="0,0,730,364" Source="/Image1.png" Stretch="Fill" Width="NaN"/>
-        <Label Content="Добро пожаловать" Margin="238,79,302,298" Height="NaN" Width="NaN" FontSize="24"/>
-        <Label Content="Создайте свою первую&#xD;&#xA;задачу!" Margin="238,140,261,201" FontSize="22"/>
-        <Button Style="{DynamicResource ButtonStyle1}" Background="#f96060" Content="Создать первую задачу" BorderBrush="#F4F4FC" BorderThickness="2" Foreground="#F4F4FC" Margin="238,268,291,124" FontSize="16"/>
-        <RadioButton Content="RadioButton" HorizontalAlignment="Left" Height="1229" Margin="-551,-260,0,0" VerticalAlignment="Top" Width="886"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="26*"/>
+            <RowDefinition Height="191*"/>
+        </Grid.RowDefinitions>
+        <Image Height="NaN" Margin="0,0,730,364" Source="/Image1.png" Stretch="Fill" Width="NaN" Grid.RowSpan="2"/>
+        <Label Content="Добро пожаловать" Margin="238,27,302,298" Height="NaN" Width="NaN" FontSize="24" Grid.Row="1"/>
+        <Label Content="Создайте свою первую&#xD;&#xA;задачу!" Margin="238,88,261,201" FontSize="22" Grid.Row="1"/>
+
+        <Button Style="{DynamicResource ButtonStyle1}" Background="#f96060" Content="Создать первую задачу" BorderBrush="#F4F4FC" BorderThickness="2" Foreground="#F4F4FC" Margin="238,216,291,124" FontSize="16" Grid.Row="1"/>
 
     </Grid>
 </Window>
