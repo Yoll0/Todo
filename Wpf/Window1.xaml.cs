@@ -81,34 +81,28 @@ namespace Wpf
 
         private void TextBox_TextChanged_3(object sender, TextChangedEventArgs e)
         {
-            TextBox passwordTextBox = (TextBox)sender;
-            string password = passwordTextBox.Text;
+            TextBox passwordTextBox = (TextBox)this.FindName("PasswordTextBox");
+            TextBox confirmPasswordTextBox = (TextBox)this.FindName("ConfirmPasswordTextBox");
 
-            // Проверяем длину пароля
-            if (password.Length >= 6)
-            {
-                // Проверяем, что пароль совпадает с паролем в другом текстовом поле
-                TextBox confirmPasswordTextBox = (TextBox)this.FindName("ConfirmPasswordTextBox");
-                string confirmPassword = confirmPasswordTextBox.Text;
+            // Проверяем, что пароль и подтверждение пароля валидны
+            string password = passwordTextBox?.Text ?? string.Empty;
+            string confirmPassword = confirmPasswordTextBox?.Text ?? string.Empty;
 
-                if (password == confirmPassword)
-                {
-                    // Пароль и подтверждение пароля валидны
-                    passwordTextBox.BorderBrush = Brushes.Green;
-                    confirmPasswordTextBox.BorderBrush = Brushes.Green;
-                }
-                else
-                {
-                    // Пароль и подтверждение пароля не совпадают
-                    passwordTextBox.BorderBrush = Brushes.Red;
-                    confirmPasswordTextBox.BorderBrush = Brushes.Red;
-                }
-            }
-            else
-            {
-                // Пароль невалидный (меньше 6 символов)
-                passwordTextBox.BorderBrush = Brushes.Red;
-            }
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow MainWindow = new MainWindow();
+            MainWindow.Show();
+            this.Close();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Main_empty main_Empty = new Main_empty();
+            main_Empty.Show();
+            this.Close();
         }
     }
 }

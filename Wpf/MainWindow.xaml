@@ -142,7 +142,7 @@
             FontSize="25"
             Background="#f96060"
             BorderBrush="#F4F4FC"
-            Foreground="#F4F4FC" Margin="414,123,136,53" Grid.Row="2"
+            Foreground="#F4F4FC" Margin="414,123,136,53" Grid.Row="2" Click="Button_Click"
             />
         <Button Style="{DynamicResource Button1}"
             Width="330"
