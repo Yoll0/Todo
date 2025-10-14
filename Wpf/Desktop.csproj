@@ -117,5 +117,11 @@
   <ItemGroup>
     <Resource Include="Image4.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Todo.Entities\Entities.csproj">
+      <Project>{15f8226c-cf12-41a1-b62b-236d68063d4f}</Project>
+      <Name>Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

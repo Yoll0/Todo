@@ -44,8 +44,11 @@ namespace Wpf
 
         private void Logout_Click(object sender, RoutedEventArgs e)
         {
-            // Добавьте код для выхода из приложения
             profilePopup.IsOpen = false;
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
+
         }
     }
 }
