@@ -129,7 +129,7 @@
             <RowDefinition Height="128*"/>
         </Grid.RowDefinitions>
         <Label Content="Добро пожаловать" Margin="429,13,130,226" FontSize="32" Grid.Row="1"/>
-        <TextBox HorizontalAlignment="Left" Height="50" Margin="429,123,0,0" TextWrapping="Wrap" Text="pochta@gmail.com" VerticalAlignment="Top" Width="283"  FontSize="16" Grid.Row="1"/>
+        <TextBox x:Name="text1" HorizontalAlignment="Left" Height="50" Margin="429,123,0,0" TextWrapping="Wrap" Text="pochta@gmail.com" VerticalAlignment="Top" Width="283"  FontSize="16" Grid.Row="1" TextChanged="TextBox_TextChanged"/>
         <Label Content="Почта&#xD;&#xA;" Margin="428,82,236,146" RenderTransformOrigin="0.525,0.685" FontSize="18" Grid.Row="1"/>
         <Label Content="Пароль" Margin="428,204,226,16" FontSize="18" Grid.Row="1"/>
         <Label Content="Восстановить пароль" Margin="548,291,115,186" FontSize="16" Grid.Row="1" Grid.RowSpan="2"/>
@@ -140,9 +140,9 @@
             Content="Регистрация"
             FontFamily="Arial"
             FontSize="25"
-            Background="#6E5CEA"
+            Background="#f96060"
             BorderBrush="#F4F4FC"
-            Foreground="#F4F4FC" Margin="414,123,136,53" Grid.Row="2"
+            Foreground="#F4F4FC" Margin="414,123,136,53" Grid.Row="2" Click="Button_Click"
             />
         <Button Style="{DynamicResource Button1}"
             Width="330"
@@ -151,11 +151,11 @@
             Content="Войти"
             FontFamily="Arial"
             FontSize="25"
-            Background="#6E5CEA"
+            Background="#f96060"
             BorderBrush="#F4F4FC"
-            Foreground="#F4F4FC" Margin="414,33,136,143" Grid.Row="2"
+            Foreground="#F4F4FC" Margin="414,33,136,143" Grid.Row="2" Click="Button_Click_1"
             />
-        <TextBox HorizontalAlignment="Left" Height="50" Margin="428,236,0,0" TextWrapping="Wrap" Text="Введите пароль" VerticalAlignment="Top" Width="283"  FontSize="16" Grid.Row="1"/>
+        <TextBox x:Name="text2" HorizontalAlignment="Left" Height="50" Margin="428,236,0,0" TextWrapping="Wrap" Text="Введите пароль" VerticalAlignment="Top" Width="283"  FontSize="16" Grid.Row="1" TextChanged="TextBox_TextChanged_1"/>
         <Image Margin="51,19,568,47" Grid.Row="1" Source="/logo.png" Stretch="Fill"/>
 
 
