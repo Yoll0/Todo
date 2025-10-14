@@ -39,12 +39,12 @@ namespace Wpf
 
         private void ChangeProfilePhoto_Click(object sender, RoutedEventArgs e)
         {
-            profilePopup.IsOpen = false;
+            
         }
 
         private void Logout_Click(object sender, RoutedEventArgs e)
         {
-            profilePopup.IsOpen = false;
+            
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
             this.Close();

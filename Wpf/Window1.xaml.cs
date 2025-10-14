@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Xml.Linq;
 
+
 namespace Wpf
 {
     /// <summary>
@@ -25,68 +26,26 @@ namespace Wpf
         {
             InitializeComponent();
         }
+        UserRepository UR = new UserRepository();
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            TextBox textBox = (TextBox)sender;
-            string name = textBox.Text;
-
-            if (name.Length >= 3)
-            {
-                // Имя валидное
-                textBox.BorderBrush = Brushes.Green;
-            }
-            else
-            {
-                // Имя невалидное
-                textBox.BorderBrush = Brushes.Red;
-            }
+          
         }
 
         private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
         {
-            TextBox textBox = (TextBox)sender;
-            string email = textBox.Text;
-
-            // Проверяем email по шаблону "*@*.*"
-            Regex emailRegex = new Regex(@"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$");
-            if (emailRegex.IsMatch(email))
-            {
-                // Email валидный
-                textBox.BorderBrush = Brushes.Green;
-            }
-            else
-            {
-                // Email невалидный
-                textBox.BorderBrush = Brushes.Red;
-            }
+            
         }
 
         private void TextBox_TextChanged_2(object sender, TextChangedEventArgs e)
         {
-            TextBox textBox = (TextBox)sender;
-            string password = textBox.Text;
-
-            if (password.Length >= 6)
-            {
-                // Пароль валидный
-                textBox.BorderBrush = Brushes.Green;
-            }
-            else
-            {
-                // Пароль невалидный
-                textBox.BorderBrush = Brushes.Red;
-            }
+            
         }
 
         private void TextBox_TextChanged_3(object sender, TextChangedEventArgs e)
         {
-            TextBox passwordTextBox = (TextBox)this.FindName("PasswordTextBox");
-            TextBox confirmPasswordTextBox = (TextBox)this.FindName("ConfirmPasswordTextBox");
-
-            // Проверяем, что пароль и подтверждение пароля валидны
-            string password = passwordTextBox?.Text ?? string.Empty;
-            string confirmPassword = confirmPasswordTextBox?.Text ?? string.Empty;
+            
 
 
         }
@@ -100,9 +59,68 @@ namespace Wpf
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            Main_empty main_Empty = new Main_empty();
-            main_Empty.Show();
-            this.Close();
+            string name = Name.Text;
+            string email = Email.Text;
+            string password = PassWord.Text.Trim();
+            string repassword = RePassWord.Text.Trim();
+//
+            if (name.Length >= 3)
+            {
+                // Имя валидное
+                Name.BorderBrush = Brushes.Green;
+            }
+            else
+            {
+                // Имя невалидное
+                Name.BorderBrush = Brushes.Red;
+                return;
+            }
+//
+            Regex emailRegex = new Regex(@"^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$");
+            if (emailRegex.IsMatch(email))
+            {
+                // Email валидный
+                Email.BorderBrush = Brushes.Green;
+            }
+            else
+            {
+                // Email невалидный
+                Email.BorderBrush = Brushes.Red;
+                return;
+            }
+
+            //
+
+            if (password.Length >= 6)
+            {
+                // Пароль валидный
+                PassWord.BorderBrush = Brushes.Green;
+            }
+            else
+            {
+                // Пароль невалидный
+                PassWord.BorderBrush = Brushes.Red;
+                return;
+            }
+            //
+            if (password != repassword)
+            {
+                MessageBox.Show("Пароли не совпадают");
+                return;
+            }
+
+
+            if (UR.UserRegistration(name, password, email))
+            {
+                Main_empty main_Empty = new Main_empty();
+                main_Empty.Show();
+                this.Close();
+            }
+            else
+            {
+                return;
+            }
+
         }
     }
 }

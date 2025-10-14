@@ -126,7 +126,7 @@
     <Grid Margin="0,3,36,34">
         <Label Content="Welcome back" Margin="429,10,50,349" FontSize="32"/>
         <Label Content="Имя пользователя" Margin="433,60,112,404" FontSize="18"/>
-        <TextBox TextWrapping="Wrap" Text="Введите имя пользователя" Margin="433,91,158,404"  FontSize="14" TextChanged="TextBox_TextChanged"/>
+        <TextBox x:Name="Name" TextWrapping="Wrap" Text="Введите имя пользователя" Margin="433,91,158,404"  FontSize="14" TextChanged="TextBox_TextChanged"/>
         <Label Content="Ваша почта" Margin="434,138,111,363" RenderTransformOrigin="0.5,0.5" FontSize="18">
             <Label.RenderTransform>
                 <TransformGroup>
@@ -137,11 +137,11 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <TextBox TextWrapping="Wrap" Text="example@yandex,ru" Margin="433,169,158,326" FontSize="14" TextChanged="TextBox_TextChanged_1"/>
+        <TextBox x:Name="Email" TextWrapping="Wrap" Text="example@yandex,ru" Margin="433,169,158,326" FontSize="14" TextChanged="TextBox_TextChanged_1"/>
         <Label Content="Пароль" Margin="433,220,158,206" FontSize="18"/>
-        <TextBox TextWrapping="Wrap" Text="Введите пароль" Margin="433,254,158,245"  FontSize="14" TextChanged="TextBox_TextChanged_2"/>
+        <TextBox x:Name="PassWord" TextWrapping="Wrap" Text="Введите пароль" Margin="433,254,158,245"  FontSize="14" TextChanged="TextBox_TextChanged_2"/>
         <Label Content="Повторите пароль" Margin="433,300,158,103" FontSize="18"/>
-        <TextBox TextWrapping="Wrap" Text="Повторите пароль" Margin="433,329,156,161" RenderTransformOrigin="0.5,0.5" FontSize="14" TextChanged="TextBox_TextChanged_3">
+        <TextBox  x:Name="RePassWord" TextWrapping="Wrap" Text="Повторите пароль" Margin="433,329,156,161" RenderTransformOrigin="0.5,0.5" FontSize="14" TextChanged="TextBox_TextChanged_3">
             <TextBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>

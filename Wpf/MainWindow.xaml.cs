@@ -21,11 +21,13 @@ namespace Wpf
     /// </summary>
     public partial class MainWindow : Window
     {
+        UserRepository UR = new UserRepository();
         public MainWindow()
         {
             InitializeComponent();
+            //UR.UserRegistration("yollo", "123123", "d3550669@gmail.com");
         }
-
+        
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Window1 window1 = new Window1();
@@ -62,19 +64,18 @@ namespace Wpf
                 MessageBox.Show("Пароль должен содержать не менее 6 символов.");
                 return; // Выход из метода, если пароль некорректный
             }
-
-            // Проверяем, соответствует ли почта и пароль заданным значениям
-            if (email == "test@gmail.com" && password == "test123")
+            try
             {
+                var user = UR.UserAuthenticate(email, password);
                 Main_empty main_Empty = new Main_empty();
                 main_Empty.Show();
                 this.Close();
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Неверные учетные данные.");
+                MessageBox.Show(ex.Message, "Ошибка");
+                return;
             }
-
 
         }
     }
