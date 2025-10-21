@@ -58,6 +58,7 @@
     <Compile Include="Main empty.xaml.cs">
       <DependentUpon>Main empty.xaml</DependentUpon>
     </Compile>
+    <Compile Include="proverka.cs" />
     <Compile Include="UserRepository.cs" />
     <Compile Include="Window1.xaml.cs">
       <DependentUpon>Window1.xaml</DependentUpon>
