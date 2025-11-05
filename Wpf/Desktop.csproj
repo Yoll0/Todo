@@ -58,12 +58,20 @@
     <Compile Include="Main empty.xaml.cs">
       <DependentUpon>Main empty.xaml</DependentUpon>
     </Compile>
+    <Compile Include="main.xaml.cs">
+      <DependentUpon>main.xaml</DependentUpon>
+    </Compile>
     <Compile Include="proverka.cs" />
+    <Compile Include="Task.cs" />
     <Compile Include="UserRepository.cs" />
     <Compile Include="Window1.xaml.cs">
       <DependentUpon>Window1.xaml</DependentUpon>
     </Compile>
     <Page Include="Main empty.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="main.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

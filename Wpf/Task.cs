@@ -8,5 +8,6 @@ namespace Wpf
 {
     internal class Task
     {
+
     }
 }

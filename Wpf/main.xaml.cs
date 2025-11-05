@@ -28,5 +28,20 @@ namespace Wpf
         {
 
         }
+
+        private void Button_Click1(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click6(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
