@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,13 @@ namespace Wpf
     /// </summary>
     public partial class main : Window
     {
-        public main()
+        UserModel _currentUser;
+        public main(UserModel user)
         {
             InitializeComponent();
+            _currentUser = user;
+            TasksListView.ItemsSource = _currentUser.UTasks;
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -40,6 +45,11 @@ namespace Wpf
         }
 
         private void Button_Click6(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }

@@ -65,7 +65,7 @@
             </Setter>
         </Style>
     </Window.Resources>
-    <Grid>
+    <Grid Margin="0,0,0,-6">
         <Grid.RowDefinitions>
             <RowDefinition Height="26*"/>
             <RowDefinition Height="191*"/>
@@ -75,7 +75,7 @@
 
         <TextBlock Text="Выход" />
 
-        <Button Style="{DynamicResource ButtonStyle1}" Background="#f96060" Content="Создать первую задачу" BorderBrush="#F4F4FC" BorderThickness="2" Foreground="#F4F4FC" Margin="239,216,290,102" FontSize="16" Grid.Row="1"/>
+        <Button Style="{DynamicResource ButtonStyle1}" Background="#f96060" Content="Создать первую задачу" BorderBrush="#F4F4FC" BorderThickness="2" Foreground="#F4F4FC" Margin="239,216,290,102" FontSize="16" Grid.Row="1" Click="Button_Click"/>
         <Image x:Name="profileImage" Margin="0,0,668,303" Grid.RowSpan="2" Source="/Image4.png" Stretch="Fill" Grid.Column="1" 
            ToolTipService.ToolTip="{Binding ElementName=profilePopup, Path=Child}"
            MouseLeftButtonUp="profileImage_MouseLeftButtonUp">
@@ -93,5 +93,6 @@
                 <Button Content="Выход" Click="Logout_Click" />
             </StackPanel>
         </Popup>
+        <Label x:Name="Nick" Content="User" Margin="45,94,0,0" Grid.Row="1" FontSize="18" HorizontalAlignment="Left" VerticalAlignment="Top"/>
     </Grid>
 </Window>

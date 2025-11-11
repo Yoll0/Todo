@@ -8,37 +8,38 @@ using System.Windows;
 
 namespace Wpf
 {
-  
-        public class UserRepository
+
+    public class UserRepository
+    {
+        private static List<UserModel> registredUser = new List<UserModel>();
+
+        public UserModel UserRegistration(string login, string password, string email)
         {
-            private static List<UserModel> registredUser = new List<UserModel>();
-
-            public bool UserRegistration(string login, string password, string email)
+            if (registredUser.Exists(l => l.Login == login))
             {
-                if (registredUser.Exists(l => l.Login == login))
-                {
-                    MessageBox.Show("Пользователь с таким логином уже существует");
-                    return false;
-                }
 
-                if (registredUser.Exists(l => l.Email == email))
-                {
-                    MessageBox.Show("Пользователь с такой почтой уже существует");
-                    return false;
-                }
-
-                var newUser = new UserModel(login, password, email);
-                registredUser.Add(newUser);
-                return true;
+                throw new Exception("Пользователь с таким логином уже существует");
             }
-            public UserModel UserAuthenticate(string email, string password)
+            if (registredUser.Exists(l => l.Email == email))
             {
-                var user = registredUser.Find(l => l.Email == email && l.Password == password);
-                if (user == null)
-                {
-                    throw new Exception("Неверная почта или пароль");
-                }
-                return user;
+
+                throw new Exception("Пользователь с такой почтой уже существует");
             }
+
+            var newUser = new UserModel(login, password, email);
+            registredUser.Add(newUser);
+            return newUser;
+
         }
+        public UserModel UserAuthenticate(string email, string password)
+        {
+            var user = registredUser.Find(l => l.Email == email && l.Password == password);
+            if (user == null)
+            {
+                throw new Exception("Неверная почта или пароль");
+            }
+            return user;
+        }
+
+    }
 }

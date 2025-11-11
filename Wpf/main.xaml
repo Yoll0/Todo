@@ -83,6 +83,20 @@
         <Button Content="История" Margin="15,203,704,201" Background="White" Click="Button_Click6" BorderBrush="White" FontSize="18"/>
         <Button Style="{DynamicResource ButtonStyle1}" Content="+" Margin="21,348,717,24" Click="Button_Click_7" BorderBrush="White" FontSize="36" Foreground="White" Background="#FFDC5454"/>
         <Label Content="You" Margin="33,100,723,298"/>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top" Width="343" Height="310"  Background="#FFD4D4D4" Margin="157,100,0,0">
+            <ListView x:Name="TasksListView">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Название" DisplayMemberBinding="{Binding Name}" Width="120"/>
+                        <GridViewColumn Header="Категория" DisplayMemberBinding="{Binding Category}" Width="100"/>
+                        <GridViewColumn Header="Описание" DisplayMemberBinding="{Binding Description}" Width="120"/>
+
+                    </GridView>
+                </ListView.View>
+            </ListView>
+
+
+        </StackPanel>
 
     </Grid>
 </Window>

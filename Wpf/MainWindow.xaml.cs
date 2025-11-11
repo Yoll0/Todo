@@ -47,27 +47,25 @@ namespace Wpf
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            // Получаем значения из TextBox
-            string email = text1.Text; // Замените на имя вашего TextBox для почты
-            string password = text2.Text; // Замените на имя вашего TextBox для пароля
 
-            // Проверяем почту по паттерну "*@*.*"
+            string email = text1.Text; 
+            string password = text2.Text; 
+
             if (!Regex.IsMatch(email, @"^.+@.+\..+$"))
             {
                 MessageBox.Show("Введите корректный адрес электронной почты.");
-                return; // Выход из метода, если почта некорректная
+                return;
             }
 
-            // Проверяем длину пароля
             if (password.Length < 6)
             {
                 MessageBox.Show("Пароль должен содержать не менее 6 символов.");
-                return; // Выход из метода, если пароль некорректный
+                return; 
             }
             try
             {
                 var user = UR.UserAuthenticate(email, password);
-                Main_empty main_Empty = new Main_empty();
+                Main_empty main_Empty = new Main_empty(user);
                 main_Empty.Show();
                 this.Close();
             }

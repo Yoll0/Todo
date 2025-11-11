@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,13 @@ namespace Wpf
     /// </summary>
     public partial class Main_empty : Window
     {
-        public Main_empty()
+        private UserModel _currentUser;
+        public Main_empty(UserModel user)
         {
             InitializeComponent();
+            _currentUser = user;
+            Nick.Content = user.Login;
+
         }
         private void profileImage_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
@@ -45,10 +50,17 @@ namespace Wpf
         private void Logout_Click(object sender, RoutedEventArgs e)
         {
             
-            MainWindow mainWindow = new MainWindow();
+            MainWindow mainWindow = new MainWindow ();
             mainWindow.Show();
             this.Close();
 
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            AddTaskDialog addTaskDialog = new AddTaskDialog (_currentUser);
+            addTaskDialog.Owner = this; 
+            addTaskDialog.ShowDialog();
         }
     }
 }
