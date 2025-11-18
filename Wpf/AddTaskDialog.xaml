@@ -122,15 +122,14 @@
             </Setter>
         </Style>
     </Window.Resources>
-    <Grid Width="420" Height="290.04" Background="#FFC1C1C1">
+    <Grid Width="420" Height="290.04" Background="#FF8EB1AC">
         <TextBox x:Name="Name" TextWrapping="Wrap" Margin="31,35,249,232"/>
-        <TextBox x:Name="Category" TextWrapping="Wrap" Margin="31,97,249,167"/>
         <TextBox x:Name="opisanie" TextWrapping="Wrap" Margin="31,160,249,86"/>
-        <DatePicker x:Name="DP" Margin="215,96,22,167"/>
+        <DatePicker x:Name="DP" Margin="215,33,22,230"/>
         <Label Content="Название" Margin="31,10,301,255"/>
         <Label Content="Категории" Margin="32,73,301,186"/>
         <Label Content="Описание" Margin="32,137,290,127"/>
-        <Button Style="{DynamicResource ButtonStyle1}" Content="Button" Margin="32,218,217,42" RenderTransformOrigin="0.5,0.5" Background="#FF50C84D" Click="Button_Click">
+        <Button Style="{DynamicResource ButtonStyle1}" Content="Создать" Margin="216,218,33,42" RenderTransformOrigin="0.5,0.5" Background="#FF50C84D" Click="Button_Click" FontSize="18">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -140,7 +139,12 @@
                 </TransformGroup>
             </Button.RenderTransform>
         </Button>
-        <Button Style="{DynamicResource ButtonStyle2}" Content="Button" Margin="224,218,22,42" Background="#FFD23838"/>
-
+        <Button Style="{DynamicResource ButtonStyle2}" Content="Отмена" Margin="31,219,215,41" Background="#FFD23838" FontSize="18"/>
+        <ComboBox x:Name="Category" HorizontalAlignment="Left" Margin="30,109,0,0"  VerticalAlignment="Top" SelectionChanged="Category_SelectionChanged" Width="141">
+        <ComboBoxItem Content="Дом" Tag="Home"/>
+        <ComboBoxItem Content="Работа" Tag="Work"/>
+        <ComboBoxItem Content="Учеба" Tag="Study"/>
+        <ComboBoxItem Content="Отдых" Tag="Leisure"/>
+        </ComboBox>
     </Grid>
 </Window>

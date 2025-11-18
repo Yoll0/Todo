@@ -24,11 +24,14 @@ namespace Wpf
     {
         private UserModel _currentUser;
         TaskRepository TR = new TaskRepository();
+        private bool _isNewMainWindow = false;
+        string category;
 
-        public AddTaskDialog(UserModel user)
+        public AddTaskDialog(UserModel user, bool isNewMainWindow = false)
         {
             InitializeComponent();
             _currentUser = user;
+            _isNewMainWindow = isNewMainWindow;
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -38,25 +41,56 @@ namespace Wpf
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            string name = Name.Text;
-            string category = Category.Text;
+                       string name;
+            if (string.IsNullOrEmpty(Name.Text))
+            {
+                return;
+            }
+            else
+            {
+                name = Name.Text;
+            }
+
+            if (category == null)
+            {
+                MessageBox.Show("Выберите категорию");
+                return;
+            }
+
             string Opisanie = opisanie.Text;
             DateTime date = DP.SelectedDate ?? DateTime.Now;
             DateTime time = DateTime.Now;
             bool status = false;
 
-
             if (TR.NewTask(_currentUser, name, category, Opisanie, time, date, status))
             {
-
-
                 MessageBox.Show("Задача успешно создана!");
 
-                main main = new main(_currentUser);
-                main.Show();
-                this.Owner?.Close(); // Main_empty
-                this.Close();
+                if (_isNewMainWindow)
+                {
+                    
+                    main main = new main(_currentUser);
+                    main.Show();
+                    this.Owner?.Close(); 
+                }
+                else
+                {
+                    if (this.Owner is main mainWindow)
+                    {
+                        mainWindow.TasksList.ItemsSource = null;
+                        mainWindow.TasksList.ItemsSource = _currentUser.UTasks;
+                    }
+                }
 
+                this.Close();
+            }
+        }
+
+        private void Category_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (Category.SelectedItem is ComboBoxItem selectedItem)
+            {
+                category = selectedItem.Tag.ToString();
             }
         }
     }
