@@ -64,7 +64,13 @@
     <Compile Include="main.xaml.cs">
       <DependentUpon>main.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MainWindiw%28p%29.xaml.cs">
+      <DependentUpon>MainWindiw%28p%29.xaml</DependentUpon>
+    </Compile>
     <Compile Include="proverka.cs" />
+    <Compile Include="Registr.xaml.cs">
+      <DependentUpon>Registr.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TaskRepository.cs" />
     <Compile Include="UserRepository.cs" />
     <Compile Include="Window1.xaml.cs">
@@ -82,6 +88,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="MainWindiw%28p%29.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -94,6 +104,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Registr.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Window1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
