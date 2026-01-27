@@ -30,9 +30,12 @@ namespace Wpf
         
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Window1 window1 = new Window1();
-            window1.Show();
-            this.Close();
+Registr registrPage = new Registr();
+var window = Window.GetWindow(this);
+if (window != null)
+{
+    window.Content = registrPage;
+}
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -65,9 +68,12 @@ namespace Wpf
             try
             {
                 var user = UR.UserAuthenticate(email, password);
-                Main_empty main_Empty = new Main_empty(user);
-                main_Empty.Show();
-                this.Close();
+                MainPage mainPage = new MainPage (user);
+                var window = Window.GetWindow(this);
+                if (window != null)
+                {
+                    window.Content = mainPage;
+                }
             }
             catch (Exception ex)
             {
