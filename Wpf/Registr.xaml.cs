@@ -40,8 +40,12 @@ namespace Wpf
                 {
                     var user = UR.UserRegistration(login, password, email);
 
-                    Main_empty main_Empty = new Main_empty(user);
-                    main_Empty.Show();
+                    MainPage mainPage = new MainPage(user);
+                    var window = Window.GetWindow(this);
+                    if (window != null)
+                    {
+                        window.Content = mainPage;
+                    }
                 }
                 catch (Exception ex)
                 {
